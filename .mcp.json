@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "imhex-guide": {
+      "command": "node",
+      "args": [
+        "mcp-server.mjs"
+      ]
+    }
+  }
+}

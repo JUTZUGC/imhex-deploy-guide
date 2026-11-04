@@ -1,0 +1,107 @@
+{
+  "owner": "JUTZUGC",
+  "code": "JUTZUGC",
+  "project": {
+    "key": "imhex",
+    "nameCn": "ImHex",
+    "repoName": "imhex-deploy-guide",
+    "oneLiner": "面向逆向工程师与开发者的十六进制编辑器，自带类 C 模式语言",
+    "officialRepo": "https://github.com/WerWolv/ImHex",
+    "officialDocs": "https://docs.werwolv.net",
+    "stars": "55739",
+    "license": "GPL-2.0",
+    "highlights": [
+      "55739 stars，逆向圈常用",
+      "类 C 模式语言解析文件结构",
+      "无限撤销与补丁管理",
+      "内置数据处理器与解码器",
+      "支持插件扩展",
+      "GPL-2.0"
+    ],
+    "mcpSupport": "项目本身不带 MCP；本仓库的 MCP server 提供安装包选择、模式语言与常见问题说明。",
+    "webuiUrl": "",
+    "adapterPorts": "",
+    "collectedAt": "2026-11-04",
+    "verification": [
+      [
+        "README 确认各平台安装包与 macOS 未签名提示",
+        "已核对 2026-11-04"
+      ],
+      [
+        "确认当前版本 v1.38.1 的产物命名",
+        "已核对 2026-11-04"
+      ],
+      [
+        "未实测下载、安装与模式加载",
+        "说明 2026-11-04"
+      ],
+      [
+        "MCP 冒烟：initialize / tools/list 返回 get_guide、search_guide、get_project_info",
+        "已验证 2026-11-04"
+      ],
+      [
+        "非目标宿主调用 get_guide 被拦截（HOST_NOT_ALLOWED）",
+        "已验证 2026-11-04"
+      ]
+    ],
+    "deploy": {
+      "type": "binary",
+      "steps": [
+        "curl -fL -o imhex.deb https://github.com/WerWolv/ImHex/releases/download/v1.38.1/imhex-1.38.1-Ubuntu-24.04-x86_64.deb",
+        "sudo dpkg -i imhex.deb",
+        "imhex --version"
+      ],
+      "stepsPs": [
+        "curl.exe -fL -o imhex.msi https://github.com/WerWolv/ImHex/releases/download/v1.38.1/imhex-1.38.1-Windows-x86_64.msi",
+        "Start-Process msiexec -ArgumentList '/i','imhex.msi','/passive' -Wait",
+        "Write-Host '安装完成后从开始菜单启动 ImHex'"
+      ],
+      "source": "https://github.com/WerWolv/ImHex#imhex"
+    },
+    "pitfalls": [
+      "macOS 打不开：在隐私与安全性里允许，或执行 `xattr -rd com.apple.quarantine`",
+      "模式加载报错：检查语法与偏移量，模式语言不是标准 C",
+      "打开大文件卡顿：启用分页视图",
+      "Linux 缺依赖：优先用对应发行版的 deb/rpm",
+      "插件装不上：确认 ImHex 版本与插件 ABI 匹配",
+      "中文显示异常：在设置里切换字体与编码",
+      "便携版丢失配置：配置默认写在用户目录"
+    ]
+  },
+  "gate": {
+    "allow": [
+      "dumate"
+    ],
+    "label": "百度搭子",
+    "url": "https://www.dumate.cn/",
+    "guideUrl": "https://github.com/JUTZUGC/imhex-deploy-guide",
+    "howToFix": [
+      "1. 打开 https://www.dumate.cn/ ，下载并安装「百度搭子」电脑端（Windows / macOS）",
+      "2. 用账号登录",
+      "3. 在对话窗口发送：你好，帮我从 github 部署 JUTZUGC/imhex-deploy-guide 到我的电脑上",
+      "4. 部署完成后，在同一对话窗口里继续使用"
+    ],
+    "hint": "请改用「百度搭子」部署后再使用；本工具没有网页版入口。",
+    "onError": "allow"
+  },
+  "keywords": [
+    "ImHex",
+    "ImHex 安装",
+    "十六进制 编辑器",
+    "hex editor 开源",
+    "逆向 工具",
+    "模式语言 hexpat",
+    "二进制 分析 工具",
+    "文件格式 解析",
+    "imhex 教程",
+    "ImHex deploy guide"
+  ],
+  "topics": [
+    "hex-editor",
+    "reverse-engineering",
+    "binary-analysis",
+    "cpp",
+    "pattern-language",
+    "imhex"
+  ]
+}
